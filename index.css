@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f5f5;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  padding: 1rem;
+  height: 100vh;
+  width: 100vw;
+}
+
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  line-height: 1.5;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+code {
+  font-family: "Courier New", monospace;
+  color: #333;
+}
+
+main textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+main textarea:focus {
+  border: 1px solid #000;
+}
+
+main #result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+main #result button {
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+main .output {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+main .output pre {
+  font-size: 1.5rem;
+}
+
+main .output pre code {
+  font-family: "Roboto Mono", monospace;
+}
+
+main .output pre code span {
+  display: inline-block;
+  width: 100%;
+}
+
+main .output pre code span:nth-child(1) {
+  color: #000;
+}
