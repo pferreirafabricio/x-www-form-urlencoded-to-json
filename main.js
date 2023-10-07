@@ -2,12 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const outputElement = document.getElementById("output");
   const inputElement = document.getElementById("input");
   const convertButton = document.getElementById("convert");
+  const copyButton = document.getElementById("copy");
 
   convertButton.addEventListener("click", () => {
     const input = inputElement.value;
     const output = convertToJson(input);
     outputElement.innerHTML = output;
   });
+
+  copyButton.addEventListener("click", copyToClipboard);
 });
 
 /**
@@ -27,6 +30,17 @@ function convertToJson(value) {
     undefined,
     2
   );
+}
+
+async function copyToClipboard() {
+  const copyText = document.getElementById("output").innerHTML;
+
+  try {
+    await navigator.clipboard.writeText(copyText);
+    console.log("Content copied to clipboard");
+  } catch (err) {
+    console.error("Failed to copy: ", err);
+  }
 }
 
 /**
