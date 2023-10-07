@@ -50,8 +50,9 @@ main #result .actions {
 }
 
 main #result button {
-  padding: 1rem 1rem;
-  font-size: 1.5rem;
+  padding: 1rem;
+  /* font-size: 1.5rem; */
+  height: 56px;
   border: none;
   outline: none;
   border-radius: 8px;
@@ -59,6 +60,24 @@ main #result button {
   color: #fff;
   cursor: pointer;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+main #result button:hover {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); 
+}
+
+main #result button#convert {
+  background-color: #000;
+  color: #fff;
+}
+
+main #result button#copy {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
 }
 
 main .output {

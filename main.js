@@ -37,10 +37,39 @@ async function copyToClipboard() {
 
   try {
     await navigator.clipboard.writeText(copyText);
-    console.log("Content copied to clipboard");
+    showClipboardSuccess();
   } catch (err) {
-    console.error("Failed to copy: ", err);
+    showClipboardError();
   }
+}
+
+function showDefaultClipboard() {
+  const copyButton = document.getElementById("copy");
+
+  copyButton.getElementsByTagName("img")[0].src = "assets/copy.svg";
+  copyButton.getElementsByTagName("span")[0].innerHTML = "Copy";
+}
+
+function showClipboardSuccess() {
+  const copyButton = document.getElementById("copy");
+
+  copyButton.getElementsByTagName("img")[0].src = "assets/success.svg";
+  copyButton.getElementsByTagName("span")[0].innerHTML = "Copied";
+
+  setTimeout(() => {
+    showDefaultClipboard();
+  }, 1500);
+}
+
+function showClipboardError() {
+  const copyButton = document.getElementById("copy");
+
+  copyButton.getElementsByTagName("img")[0].src = "assets/error.svg";
+  copyButton.getElementsByTagName("span")[0].innerHTML = "Error";
+
+  setTimeout(() => {
+    showDefaultClipboard();
+  }, 1500);
 }
 
 /**
