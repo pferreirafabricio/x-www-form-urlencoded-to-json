@@ -3,11 +3,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const inputElement = document.getElementById("input");
   const convertButton = document.getElementById("convert");
   const copyButton = document.getElementById("copy");
+  let isRotating = false;
 
   convertButton.addEventListener("click", () => {
     const input = inputElement.value;
     const output = convertToJson(input);
     outputElement.innerHTML = output;
+    const rotateImg = convertButton.getElementsByTagName("img")[0];
+    
+    if (isRotating) return;
+
+    rotateImg.classList.add("rotate-img");
+    isRotating = true;
+
+    setTimeout(function () {
+      rotateImg.classList.remove("rotate-img");
+      isRotating = false;
+    }, 1000);
   });
 
   copyButton.addEventListener("click", copyToClipboard);
@@ -80,25 +92,3 @@ function showClipboardError() {
 function simpleConvert(value) {
   return '{"' + value.replaceAll("&", '", "').replaceAll("=", '": "') + '"}';
 }
-
-const convertButton = document.getElementById("convert");
-const rotateImg = document.querySelector(".rotate-img");
-let isRotating = false;
-
-convertButton.addEventListener("click", function() {
-  if (!isRotating) {
-    rotateImg.classList.add("rotate");
-    isRotating = true;
-
-    setTimeout(function() {
-      rotateImg.classList.remove("rotate");
-      isRotating = false;
-    }, 3000);
-  }
-});
-
-
-
-
-
-

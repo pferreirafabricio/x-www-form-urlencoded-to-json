@@ -81,7 +81,6 @@ main #result button#convert:hover {
   transform: scale(1.07);
 }
 
-
 main #result button#copy {
   background-color: #fff;
   height: 10vh;
@@ -118,10 +117,8 @@ main .output pre code {
   word-break: break-all;
 }
 
-
 .rotate-img {
-  
-  animation: spin 3s linear;
+  animation: spin 1s linear;
 }
 
 @keyframes spin {
