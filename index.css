@@ -51,7 +51,8 @@ main #result .actions {
 
 main #result button {
   padding: 1rem;
-  height: 56px;
+  height: 10vh;
+  width: 20vh;
   border: none;
   outline: none;
   border-radius: 8px;
@@ -65,18 +66,35 @@ main #result button {
 }
 
 main #result button:hover {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); 
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 main #result button#convert {
   background-color: #000;
   color: #fff;
+  transition: transform 0.3s;
+}
+
+main #result button#convert:hover {
+  background-color: #353535;
+  color: #fff;
+  transform: scale(1.07);
 }
 
 main #result button#copy {
   background-color: #fff;
+  height: 10vh;
+  width: 20vh;
   color: #000;
   border: 1px solid #ccc;
+  transition: transform 0.3s;
+}
+
+main #result button#copy:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  transform: scale(1.07);
 }
 
 main .output {
@@ -97,6 +115,19 @@ main .output pre code {
   font-family: "Roboto Mono", monospace;
   white-space: pre-wrap;
   word-break: break-all;
+}
+
+.rotate-img {
+  animation: spin 1s linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 768px) {
