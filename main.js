@@ -80,3 +80,25 @@ function showClipboardError() {
 function simpleConvert(value) {
   return '{"' + value.replaceAll("&", '", "').replaceAll("=", '": "') + '"}';
 }
+
+const convertButton = document.getElementById("convert");
+const rotateImg = document.querySelector(".rotate-img");
+let isRotating = false;
+
+convertButton.addEventListener("click", function() {
+  if (!isRotating) {
+    rotateImg.classList.add("rotate");
+    isRotating = true;
+
+    setTimeout(function() {
+      rotateImg.classList.remove("rotate");
+      isRotating = false;
+    }, 3000);
+  }
+});
+
+
+
+
+
+
