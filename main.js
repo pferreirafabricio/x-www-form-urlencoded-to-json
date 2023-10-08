@@ -3,22 +3,22 @@ document.addEventListener("DOMContentLoaded", function () {
   const inputElement = document.getElementById("input");
   const convertButton = document.getElementById("convert");
   const copyButton = document.getElementById("copy");
-  let isRotating = false;
+  let rotating = false;
 
   convertButton.addEventListener("click", () => {
     const input = inputElement.value;
     const output = convertToJson(input);
     outputElement.innerHTML = output;
     const rotateImg = convertButton.getElementsByTagName("img")[0];
-    
-    if (isRotating) return;
+
+    if (rotating) return;
 
     rotateImg.classList.add("rotate-img");
-    isRotating = true;
+    rotating = true;
 
     setTimeout(function () {
       rotateImg.classList.remove("rotate-img");
-      isRotating = false;
+      rotating = false;
     }, 1000);
   });
 
