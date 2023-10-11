@@ -14,7 +14,7 @@
 <br>
 <br>
 
-> **Note:**
+> **Note**
 >
 > Take a look at https://pferreirafabricio.github.io/x-www-form-urlencoded-to-json/ for a live test
 
